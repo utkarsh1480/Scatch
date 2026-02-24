@@ -1,6 +1,5 @@
 
 const mongoose = require("mongoose");
-
 const userSchema = new mongoose.Schema({
     fullName: {
         type: String,
@@ -11,7 +10,7 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique : true
+        unique: true
     },
     password: {
         type: String,
@@ -19,7 +18,7 @@ const userSchema = new mongoose.Schema({
     },
     cart: {
         type: Array,
-        default:[]
+        default: []
     },
     contact: {
         type: Number,
@@ -32,10 +31,10 @@ const userSchema = new mongoose.Schema({
     },
     orders: {
         type: Array,
-        default : []
+        default: []
     },
     picture: "string"
 })
 
 const User = mongoose.model("User", userSchema);
-module.exports = userSchema;
+module.exports = User;

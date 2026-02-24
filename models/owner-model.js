@@ -1,37 +1,36 @@
-
 const mongoose = require("mongoose");
 
 const ownerSchema = new mongoose.Schema({
     fullName: {
         type: String,
-        requuire: true,
+        required: true,
         minLength: 3,
-        trim : true
+        trim: true
     },
     email: {
         type: String,
         required: true,
-        unique : true
+        unique: true
     },
     password: {
         type: String,
         required: true
     },
-    
     contact: {
-        type: Number,
+        type: String,
         unique: true
     },
-    
-    products: {
-        type: Array,
-        default : []
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product"
+    }],
+    picture: {
+        type: String
     },
-    picture: "string",
     gstin: {
-        type : String
+        type: String
     }
-})
+});
 
-const User = mongoose.model("User", ownerSchema);
-module.exports = userSchema;
+const Owner = mongoose.model("Owner", ownerSchema);
+module.exports = Owner;
