@@ -1,11 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup Page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#00b4db,#0083b0);
+}
+
+/* MAIN CARD */
+.container{
+  width:950px;
+  height:560px;
+  background:#f2f2f2;
+  border-radius:25px;
+  display:flex;
+  overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,0.3);
+}
+
+/* LEFT SIDE FORM */
+.left{
+  width:50%;
+  padding:55px;
+}
+
+.logo{
+  color:#4b5d91;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.left h2{
+  font-size:28px;
+  margin-bottom:25px;
+}
+
+.input-box{
+  margin-bottom:18px;
+}
+
+.input-box input{
+  width:100%;
+  padding:14px 18px;
+  border-radius:30px;
+  border:1px solid #ddd;
+  outline:none;
+  background:white;
+}
+
+/* BUTTON */
+.signup-btn{
+  background:#b12b5b;
+  color:white;
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:500;
+  width:100%;
+  margin-top:10px;
+}
+
+.divider{
+  text-align:center;
+  font-size:13px;
+  margin:20px 0;
+  color:#777;
+}
+
+/* SOCIAL */
+.social{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+
+.social div{
+  width:45px;
+  height:45px;
+  border:1px solid #ccc;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.login{
+  text-align:center;
+  font-size:13px;
+  margin-top:18px;
+}
+
+.login span{
+  color:#4b5d91;
+  font-weight:500;
+  cursor:pointer;
+}
+
+/* RIGHT IMAGE PANEL */
+.right{
+  width:50%;
+  background:#e0e6ec;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.right img{
+  width:75%;
+}
+
+</style>
 </head>
+
 <body>
-    
+
+<div class="container">
+
+  <!-- LEFT SIGNUP FORM -->
+  <div class="left">
+
+    <div class="logo">Scatch</div>
+    <h2>Create Account</h2>
+<form target="/sigup" method="post">
+    <div class="input-box">
+      <input type="text" placeholder="Full Name" name="fullName">
+    </div>
+
+    <div class="input-box">
+      <input type="email" placeholder="Email Address" name="email">
+    </div>
+
+    <div class="input-box">
+      <input type="password" placeholder="Password" name="password">
+    </div>
+
+    <div class="input-box">
+      <input type="number" placeholder="Contact Number" name="contact">
+    </div>
+
+    <button class="signup-btn">Sign up</button>
+
+    <div class="divider">or continue with</div>
+
+    <div class="social">
+      <div>G</div>
+      <div>🐙</div>
+      <div>f</div>
+    </div>
+
+    <div class="login">
+      Already have an account? <span>Login</span>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE IMAGE -->
+  <div class="right">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+  </div>
+</form>
+</div>
+
 </body>
 </html>
