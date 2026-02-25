@@ -22,12 +22,6 @@ const userSchema = new mongoose.Schema({
     },
     contact: {
         type: Number,
-        unique: true
-    },
-    role: {
-        type: String,
-        enum: ["User", "Admin"],
-        default: "User"
     },
     orders: {
         type: Array,

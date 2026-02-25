@@ -18,7 +18,7 @@ const ownerSchema = new mongoose.Schema({
     },
     contact: {
         type: String,
-        unique: true
+
     },
     products: [{
         type: mongoose.Schema.Types.ObjectId,
