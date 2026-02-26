@@ -6,6 +6,7 @@ function setUser(user) {
        _id : user.id,
        email : user.email
    }, secret) 
+    console.log("called")
     return token;
 }
 

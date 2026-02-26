@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const { setUser } = require('../Services/user.js');
+const { matchPasswordAndGenerateToke } = require('../models/user.js')
 
 async function handelSignupUser(req, res) {
     const { fullName, email, password, contact } = req.body;
@@ -24,14 +25,16 @@ async function handelLoginUser(req, res) {
     console.log(email);
     console.log(password);
     try {
-        const LoginUser = await User.findOne({ email, password });
-        console.log(LoginUser);
-        if (!LoginUser) return res.send("Plese Enter Valid Information");
-        const token = setUser(LoginUser);
-        res.status(200).cookie("token",token).send("Success");
+       
+       
+        const Token = await matchPasswordAndGenerateToke(email, password)
+        console.log(Token);
+        res.status(200).cookie("token", Token).send("Success");
     }
     catch (error) {
-        res.send(error);
+        res.render('login', {
+            error: "Incorrect Email or Password",
+        })
     }
 
 }
