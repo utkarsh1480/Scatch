@@ -25,11 +25,11 @@ async function handelLoginUser(req, res) {
     console.log(email);
     console.log(password);
     try {
-       
-       
-        const Token = await matchPasswordAndGenerateToke(email, password)
-        console.log(Token);
-        res.status(200).cookie("token", Token).send("Success");
+
+
+        const token = await User.matchPasswordAndGenerateToke(email, password)
+        console.log(token);
+        res.status(200).cookie("token", token).redirect('/home');
     }
     catch (error) {
         res.render('login', {

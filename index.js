@@ -7,6 +7,8 @@ const db = require('./config/mongoose-connect.js')
 const userRouter = require('./routes/userRouter');
 const ownerRouter = require('./routes/ownerRouter.js')
 const productsRouter = require('./routes/productRouter.js')
+const homeRouter = require('./routes/homeRouter.js')
+
 
 const Port = 3000;
 
@@ -21,6 +23,7 @@ app.set('views', path.resolve('./views'));
 app.use('/user', userRouter);
 app.use('/owner', ownerRouter);
 app.use('/products', productsRouter);
+app.use('/', homeRouter);
 
 
 

@@ -6,14 +6,13 @@ function setUser(user) {
        _id : user.id,
        email : user.email
    }, secret) 
-    console.log("called")
     return token;
 }
 
 
-function getUser(tokens) {
+function getUser(token) {
     if (!token) return null;
-    jwt.verify(tokens, secret)
+    return jwt.verify(token, secret);
 }
 module.exports = {
     setUser,
